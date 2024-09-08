@@ -8,7 +8,7 @@ const BASE_URL = "https://api.openweathermap.org/data/2.5/forecast";
 
 export const fetchWeather = async (city: string): Promise<Weather> => {
   try {
-    const response = await axios.get<WeatherResponse>(`${BASE_URL}`, {
+    const {data} = await axios.get<WeatherResponse>(`${BASE_URL}`, {
       params: {
         q: city,
         appid: API_KEY,
@@ -18,14 +18,14 @@ export const fetchWeather = async (city: string): Promise<Weather> => {
     });
 
     const weatherData: Weather = {
-      city: response.data.city.name,
-      temperature: response.data.list[0].main.temp,
-      description: response.data.list[0].weather[0].description,
-      lat: response.data.city.coord.lat,
-      lon: response.data.city.coord.lon,
-      humidity: response.data.list[0].main.humidity,
-      windSpeed: response.data.list[0].wind.speed,
-      hourly: response.data.list.map(entry => ({
+      city: data.city.name,
+      temperature: data.list[0].main.temp,
+      description: data.list[0].weather[0].description,
+      lat: data.city.coord.lat,
+      lon: data.city.coord.lon,
+      humidity: data.list[0].main.humidity,
+      windSpeed: data.list[0].wind.speed,
+      hourly: data.list.map(entry => ({
         time: entry.dt,
         temp: entry.main.temp,
       })),
@@ -42,7 +42,7 @@ export const fetchWeatherByLocation = async (
   lon: number
 ): Promise<Weather> => {
   try {
-    const response = await axios.get<WeatherResponse>(`${BASE_URL}`, {
+    const {data} = await axios.get<WeatherResponse>(`${BASE_URL}`, {
       params: {
         lat: lat,
         lon: lon,
@@ -53,14 +53,14 @@ export const fetchWeatherByLocation = async (
     });
 
     const weatherData: Weather = {
-      city: response.data.city.name,
-      temperature: response.data.list[0].main.temp,
-      description: response.data.list[0].weather[0].description,
-      lat: response.data.city.coord.lat,
-      lon: response.data.city.coord.lon,
-      humidity: response.data.list[0].main.humidity,
-      windSpeed: response.data.list[0].wind.speed,
-      hourly: response.data.list.map(entry => ({
+      city: data.city.name,
+      temperature: data.list[0].main.temp,
+      description: data.list[0].weather[0].description,
+      lat: data.city.coord.lat,
+      lon: data.city.coord.lon,
+      humidity: data.list[0].main.humidity,
+      windSpeed: data.list[0].wind.speed,
+      hourly: data.list.map(entry => ({
         time: entry.dt,
         temp: entry.main.temp,
       })),
