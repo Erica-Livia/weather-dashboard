@@ -3,6 +3,7 @@ import SearchBar from "./components/SearchBar";
 import WeatherDisplay from "./components/WeatherDisplay";
 import ClipLoader from "react-spinners/ClipLoader";
 import { Weather } from "./types/Weather";
+import WeatherMap from './components/WeatherMap';
 import {
   fetchWeather,
   fetchWeatherByLocation,
