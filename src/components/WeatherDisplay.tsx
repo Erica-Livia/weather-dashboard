@@ -1,17 +1,16 @@
 import React from 'react';
 import { Weather } from '../types/Weather';
-import TemperatureGraph from './TemperatureGraph'; // For displaying the temperature graph
-import WeatherMap from './WeatherMap'; // For displaying the map
+import TemperatureGraph from './TemperatureGraph';
+import WeatherMap from './WeatherMap';
 
 interface WeatherDisplayProps {
   weather: Weather;
 }
 
 const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weather }) => {
-  // Generate temperature data for the graph
   const temperatureData = weather.hourly.map((temp, index) => ({
-    time: new Date(temp.time * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), // Convert Unix timestamp to time format
-    temp: temp.temp, // Use actual temperature values
+    time: new Date(temp.time * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+    temp: temp.temp,
   }));
 
   return (

@@ -1,8 +1,7 @@
-// components/WeatherMap.tsx
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS for proper styling
-import { LatLngExpression } from 'leaflet'; // Import LatLngExpression from Leaflet
+import 'leaflet/dist/leaflet.css';
+import { LatLngExpression } from 'leaflet';
 
 interface WeatherMapProps {
   lat: number;
