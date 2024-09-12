@@ -6,20 +6,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
   background-attachment: fixed;
 }
 
 .app {
+  margin: 100px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   padding: 30px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  width: 350px;
-  max-width: 90%;
+  width: 1200px;
+  max-width: 100%;
+  max-height: 100%;
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow-y: auto;
 }
 
 .app:hover {
@@ -54,7 +57,7 @@ button {
   transition: background-color 0.3s ease, transform 0.2s ease;
   margin-top: 15px;
   width: 100%;
-  max-width: 150px;
+  max-width: 250px;
 }
 
 button:hover {
@@ -79,6 +82,12 @@ p {
   margin: 8px 0;
   font-size: 18px;
   color: #fff;
+}
+
+.map-container {
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
 }
 
 @media (max-width: 400px) {
