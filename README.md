@@ -80,4 +80,4 @@ The build files will be generated in the `dist` directory.
 
 - [Long Deng](https://github.com/longmaker2)
 - [Shema Fred](https://github.com/Ndi-Shema)
-Please add your name and link to your GitHub profile here.
+  Please add your name and link to your GitHub profile here.

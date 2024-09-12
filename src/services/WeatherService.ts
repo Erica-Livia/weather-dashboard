@@ -1,4 +1,3 @@
-// services/WeatherService.ts
 import axios from "axios";
 import { Weather } from "../types/Weather";
 import { WeatherResponse } from "../types/WeatherResponse";
@@ -8,7 +7,7 @@ const BASE_URL = "https://api.openweathermap.org/data/2.5/forecast";
 
 export const fetchWeather = async (city: string): Promise<Weather> => {
   try {
-    const {data} = await axios.get<WeatherResponse>(`${BASE_URL}`, {
+    const { data } = await axios.get<WeatherResponse>(`${BASE_URL}`, {
       params: {
         q: city,
         appid: API_KEY,
@@ -25,7 +24,7 @@ export const fetchWeather = async (city: string): Promise<Weather> => {
       lon: data.city.coord.lon,
       humidity: data.list[0].main.humidity,
       windSpeed: data.list[0].wind.speed,
-      hourly: data.list.map(entry => ({
+      hourly: data.list.map((entry) => ({
         time: entry.dt,
         temp: entry.main.temp,
       })),
@@ -42,7 +41,7 @@ export const fetchWeatherByLocation = async (
   lon: number
 ): Promise<Weather> => {
   try {
-    const {data} = await axios.get<WeatherResponse>(`${BASE_URL}`, {
+    const { data } = await axios.get<WeatherResponse>(`${BASE_URL}`, {
       params: {
         lat: lat,
         lon: lon,
@@ -60,7 +59,7 @@ export const fetchWeatherByLocation = async (
       lon: data.city.coord.lon,
       humidity: data.list[0].main.humidity,
       windSpeed: data.list[0].wind.speed,
-      hourly: data.list.map(entry => ({
+      hourly: data.list.map((entry) => ({
         time: entry.dt,
         temp: entry.main.temp,
       })),

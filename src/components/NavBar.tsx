@@ -10,7 +10,12 @@ const NavBar: React.FC = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="navbar-logo">Logo</div>
-      <button className="navbar-toggler" type="button" onClick={toggleMenu} title="Toggle navigation">
+      <button
+        className="navbar-toggler"
+        type="button"
+        onClick={toggleMenu}
+        title="Toggle navigation"
+      >
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`}>
