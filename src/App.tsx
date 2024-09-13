@@ -68,7 +68,8 @@ const App: React.FC = () => {
           <SearchBar onSearch={handleSearch} />
           <button
             className="btn btn-primary mt-2"
-            onClick={handleCurrentLocation}>
+            onClick={handleCurrentLocation}
+          >
             Use Current Location
           </button>
           {loading && <ClipLoader />}

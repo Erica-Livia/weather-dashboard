@@ -10,6 +10,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSearch(city);
+    setCity('')
   };
 
   return (
