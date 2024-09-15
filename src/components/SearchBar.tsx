@@ -15,7 +15,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label htmlFor="city">City Name</label>
       <input
+      id="city"
         type="text"
         value={city}
         onChange={(e) => setCity(e.target.value)}
