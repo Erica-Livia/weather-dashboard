@@ -1,4 +1,3 @@
-
 /* Overall styles for the weather display */
 .weather-display {
   padding: 20px; /* Add padding around the component */
@@ -6,7 +5,7 @@
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   max-width: auto; /* Max width for the component */
-  margin: auto; /* Center align the component */
+  margin: 50px; /* Center align the component */
 }
 
 h2 {
@@ -46,7 +45,10 @@ h2 {
   list-style-type: none; /* Remove bullet points */
   padding: 0; /* Remove padding */
   display: grid; /* Use a grid layout */
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Responsive columns */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(100px, 1fr)
+  ); /* Responsive columns */
   gap: 10px; /* Space between items */
 }
 
@@ -76,7 +78,8 @@ h2 {
 }
 
 /* Styles for the graph and map containers */
-.graph-container, .map-container {
+.graph-container,
+.map-container {
   margin-top: 20px; /* Space above the containers */
   padding: 15px; /* Inner padding */
   border-radius: 8px; /* Rounded corners */
