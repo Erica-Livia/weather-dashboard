@@ -2,7 +2,7 @@ import React from "react";
 import { Weather } from "../types/Weather";
 import TemperatureGraph from "./TemperatureGraph";
 import WeatherMap from "./WeatherMap";
-import './WeatherDisplay.css'; // the CSS file for styling
+import "./WeatherDisplay.css";
 
 interface WeatherDisplayProps {
   weather: Weather;
@@ -21,15 +21,17 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weather }) => {
   return (
     <div className="weather-display">
       <h2>{weather.city}</h2>
-      <p className="temperature">Current Temperature: {weather.temperature}°C</p>
+      <p className="temperature">
+        Current Temperature: {weather.temperature}°C
+      </p>
       <p>Description: {weather.description}</p>
-      
+
       {/* Weather details */}
       <div className="details">
         <p>Humidity: {weather.humidity}%</p>
         <p>Wind Speed: {weather.windSpeed} m/s</p>
       </div>
-      
+
       {/* Hourly forecast for the next 24 hours */}
       <div className="hourly-forecast">
         <h3>Hourly Forecast for the Next 24 Hours</h3>
@@ -39,7 +41,8 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weather }) => {
               {new Date(hour.time * 1000).toLocaleTimeString([], {
                 hour: "2-digit",
                 minute: "2-digit",
-              })}: {hour.temp}°C
+              })}
+              : {hour.temp}°C
             </li>
           ))}
         </ul>
@@ -47,7 +50,11 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weather }) => {
 
       {/* Renders the temperature graph */}
       <div className="graph-container">
-        <TemperatureGraph data={temperatureData} currentTemp={weather.temperature} location={weather.city} />
+        <TemperatureGraph
+          data={temperatureData}
+          currentTemp={weather.temperature}
+          location={weather.city}
+        />
       </div>
 
       {/* Renders the map with city location */}

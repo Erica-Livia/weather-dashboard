@@ -1,6 +1,6 @@
 /* Overall styles for the weather display */
 .weather-display {
-  padding: 20px; /* Add padding around the component */
+  padding: 20px; /* Padding around the component */
   background-color: rgb(9, 48, 244); /* White background for contrast */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -67,7 +67,7 @@ h2 {
 }
 
 .hourly-forecast li span {
-  display: block; /* Ensure span elements occupy full width */
+  display: block;
   font-size: 18px; /* Slightly larger font size for data */
   font-weight: bold; /* Bold text for emphasis */
 }

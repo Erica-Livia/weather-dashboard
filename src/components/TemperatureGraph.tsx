@@ -37,8 +37,14 @@ const TemperatureGraph: React.FC<TemperatureGraphProps> = ({
   const avgTemp = data.reduce((acc, curr) => acc + curr.temp, 0) / data.length;
 
   return (
-    <div style={{ width: '100%', height: '300px' }}> {/* Ensures a fixed height for ResponsiveContainer */}
-      <ResponsiveContainer width="100%" height="100%" aria-label="Temperature Graph">
+    <div style={{ width: "100%", height: "300px" }}>
+      {" "}
+      {/* Ensures a fixed height for ResponsiveContainer */}
+      <ResponsiveContainer
+        width="100%"
+        height="100%"
+        aria-label="Temperature Graph"
+      >
         <LineChart data={data}>
           <CartesianGrid stroke={gridColor} strokeDasharray="3 3" />
           <XAxis dataKey="time">
@@ -48,7 +54,12 @@ const TemperatureGraph: React.FC<TemperatureGraphProps> = ({
             <Label value="Temperature (°C)" angle={-90} position="insideLeft" />
           </YAxis>
           <Tooltip />
-          <ReferenceLine y={avgTemp} label="Average" stroke="red" strokeDasharray="3 3" />
+          <ReferenceLine
+            y={avgTemp}
+            label="Average"
+            stroke="red"
+            strokeDasharray="3 3"
+          />
           <Area
             type="monotone"
             dataKey="temp"
@@ -65,7 +76,12 @@ const TemperatureGraph: React.FC<TemperatureGraphProps> = ({
             activeDot={{ r: 6 }} // Active dot size
           />
           {currentTemp !== undefined && (
-            <ReferenceLine y={currentTemp} label={`Current: ${currentTemp}°C`} stroke="green" strokeDasharray="3 3" />
+            <ReferenceLine
+              y={currentTemp}
+              label={`Current: ${currentTemp}°C`}
+              stroke="green"
+              strokeDasharray="3 3"
+            />
           )}
           <defs>
             <linearGradient id="colorTemp" x1="0" y1="0" x2="0" y2="1">
@@ -75,7 +91,7 @@ const TemperatureGraph: React.FC<TemperatureGraphProps> = ({
           </defs>
         </LineChart>
       </ResponsiveContainer>
-      {location && <p style={{ textAlign: 'center' }}>Location: {location}</p>}
+      {location && <p style={{ textAlign: "center" }}>Location: {location}</p>}
     </div>
   );
 };
