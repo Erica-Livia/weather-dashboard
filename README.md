@@ -80,4 +80,5 @@ The build files will be generated in the `dist` directory.
 
 - [Long Deng](https://github.com/longmaker2)
 - [Shema Fred](https://github.com/Ndi-Shema)
+- [Ornella Mahoro](https://github.com/OrnellaNiyibizi)
   Please add your name and link to your GitHub profile here.
