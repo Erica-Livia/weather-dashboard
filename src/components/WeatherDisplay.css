@@ -1,0 +1,84 @@
+
+/* Overall styles for the weather display */
+.weather-display {
+  padding: 20px; /* Add padding around the component */
+  background-color: rgb(9, 48, 244); /* White background for contrast */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: auto; /* Max width for the component */
+  margin: auto; /* Center align the component */
+}
+
+h2 {
+  font-size: 28px; /* Main title size */
+  color: #2c3e50; /* Dark color for titles */
+  text-align: center; /* Center align titles */
+}
+
+.temperature {
+  font-size: 22px; /* Current temperature size */
+  color: #e98d83; /* Accent color for current temperature */
+  font-weight: bold; /* Bold text for emphasis */
+  text-align: center; /* Center align */
+}
+
+.details {
+  text-align: center; /* Center align details */
+  margin-bottom: 20px; /* Space below details */
+}
+
+.hourly-forecast {
+  margin-top: 20px; /* Space above the hourly forecast */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background for contrast */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
+  padding: 15px; /* Inner padding */
+}
+
+.hourly-forecast h3 {
+  font-size: 24px; /* Increased size for better visibility */
+  color: #2c3e50; /* Darker shade for the title */
+  margin-bottom: 10px; /* Space below the title */
+  text-align: center; /* Center-align the title */
+}
+
+.hourly-forecast ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  display: grid; /* Use a grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Responsive columns */
+  gap: 10px; /* Space between items */
+}
+
+.hourly-forecast li {
+  padding: 10px; /* Space between items */
+  border: 1px solid #e0e0e0; /* Border for separation */
+  border-radius: 5px; /* Slightly rounded corners for items */
+  color: #555; /* Gray color for the forecast items */
+  background-color: #ffffff; /* White background for forecast items */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.hourly-forecast li:hover {
+  background-color: #e9f5ff; /* Light blue background on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.hourly-forecast li span {
+  display: block; /* Ensure span elements occupy full width */
+  font-size: 18px; /* Slightly larger font size for data */
+  font-weight: bold; /* Bold text for emphasis */
+}
+
+.hourly-forecast li .time {
+  font-size: 16px; /* Font size for time */
+  color: #777; /* Lighter color for time */
+}
+
+/* Styles for the graph and map containers */
+.graph-container, .map-container {
+  margin-top: 20px; /* Space above the containers */
+  padding: 15px; /* Inner padding */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f3f4f6; /* Light background for contrast */
+}
